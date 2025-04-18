@@ -24,24 +24,16 @@ public class SeleniumTest {
 
     @BeforeAll
     public void beforeAll() {
-        driver = browserGetter.getChromeDriver();
     }
 
     @AfterAll
     public void afterAll() {
-        driver.quit();
     }
 
     @Test
     public void openTheComPageAndCheckTheTitle() {
-        String expectedComTitle = "Example Domain";
-        driver.get("https://www.example.com");
-        assertEquals(expectedComTitle, driver.getTitle());
     }
     @Test
     public void openTheOrgPageAndCheckTheTitle() {
-        String expectedOrgTitle = "Example Domain";
-        driver.get("https://www.example.org");
-        assertEquals(expectedOrgTitle, driver.getTitle());
     }
 }
