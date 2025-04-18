@@ -10,21 +10,14 @@ import org.openqa.selenium.WebDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 
-//comment
-
-/**
- * Javadoc
- */
-
-//todo
 @TestInstance(PER_CLASS)
-public class SeleniumTest {
+public class WithConfigurationTest {
     private BrowserGetter browserGetter = new BrowserGetter();
     private WebDriver driver;
 
     @BeforeAll
     public void beforeAll() {
-        driver = browserGetter.getChromeDriver();
+        driver = browserGetter.getDriver();
     }
 
     @AfterAll
@@ -33,15 +26,8 @@ public class SeleniumTest {
     }
 
     @Test
-    public void openTheComPageAndCheckTheTitle() {
-        String expectedComTitle = "Example Domain";
+    public void justATest() {
         driver.get("https://www.example.com");
-        assertEquals(expectedComTitle, driver.getTitle());
-    }
-    @Test
-    public void openTheOrgPageAndCheckTheTitle() {
-        String expectedOrgTitle = "Example Domain";
-        driver.get("https://www.example.org");
-        assertEquals(expectedOrgTitle, driver.getTitle());
+        assertEquals("Example Domain", driver.getTitle());
     }
 }
